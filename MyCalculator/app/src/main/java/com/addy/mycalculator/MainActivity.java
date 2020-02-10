@@ -7,6 +7,7 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
                     double result = etone + etwo;
                     res.setText(Double.toString(result));
+                }
+                else{
+                    Toast.makeText(MainActivity.this,"Invalid value of x,y",Toast.LENGTH_LONG).show();
                 }
             }
         });

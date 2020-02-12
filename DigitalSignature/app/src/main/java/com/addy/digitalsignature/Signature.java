@@ -33,7 +33,7 @@ public class Signature extends View {
         float yPos = event.getY();
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                path.moveTo(xPos, yPos);
+                path.moveTo(xPos,yPos);
                 return true;
             case MotionEvent.ACTION_MOVE:
                 path.lineTo(xPos, yPos);

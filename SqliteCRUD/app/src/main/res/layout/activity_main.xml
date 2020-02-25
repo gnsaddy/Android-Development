@@ -110,7 +110,8 @@
             android:padding="5sp"
             android:shadowColor="@color/colorPrimary"
             android:text="Add "
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            />
 
     </LinearLayout>
 
@@ -160,9 +161,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="169dp"
+        android:layout_height="167dp"
         android:layout_below="@+id/layoutCreate"
-        android:layout_margin="10sp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="10sp"
         android:orientation="vertical">
 
         <Button
@@ -178,7 +180,7 @@
             android:text="View Details"
             android:textSize="20sp" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnMail"
             android:layout_width="match_parent"
             android:layout_height="58dp"
@@ -187,7 +189,9 @@
             android:background="@color/colorAccent"
             android:gravity="center"
             android:padding="5sp"
+            android:scaleType="fitCenter"
             android:shadowColor="@color/colorPrimary"
+            android:src="@android:drawable/ic_dialog_email"
             android:text="Email Details"
             android:textSize="20sp" />
     </LinearLayout>

@@ -17,13 +17,11 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
 
     public DatabaseHelperClass(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
-
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("create table " + TABLE_NAME + " (usn varchar(30) primary key, name text, cgpa float) ");
-
     }
 
     @Override

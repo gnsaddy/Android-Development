@@ -9,12 +9,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     DatabaseHelperClass databaseHelperClass;
     EditText usn,name,cgpa;
-    Button createTbl,addData,updateData,deleteData,viewData,emailData;
+    Button createTbl,addData,updateData,deleteData,viewData;
+    ImageButton emailData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +40,17 @@ public class MainActivity extends AppCompatActivity {
         ViewAll();
         DeleteData();
         SendToMail();
+//        createTable();
     }
+
+//    public void createTable(){
+//        createTbl.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                boolean isCreated = databaseHelperClass.onCreate();
+//            }
+//        });
+//    }
 
 
     public void AddData(){

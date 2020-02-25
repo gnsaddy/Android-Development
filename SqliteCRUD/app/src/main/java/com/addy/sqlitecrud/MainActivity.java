@@ -3,6 +3,7 @@ package com.addy.sqlitecrud;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -29,12 +30,14 @@ public class MainActivity extends AppCompatActivity {
         viewData = findViewById(R.id.btnView);
         updateData = findViewById(R.id.btnUpdate);
         deleteData = findViewById(R.id.btnDelete);
+        emailData = findViewById(R.id.btnMail);
 
 
         AddData();
         UpdateData();
         ViewAll();
         DeleteData();
+        SendToMail();
     }
 
 
@@ -80,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    
+
     public void ViewAll(){
         viewData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,5 +115,21 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
+    public void SendToMail(){
+        emailData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String id = usn.getText().toString();
+                String nm = name.getText().toString();
+                String mark = cgpa.getText().toString();
+                Intent intentMail = new Intent(Intent.ACTION_SEND);
+                intentMail.putExtra(Intent.EXTRA_EMAIL, new String[]{"gnsaddy@gmail.com"});
+                intentMail.putExtra(Intent.EXTRA_SUBJECT, "Testing sending mail");
+                intentMail.putExtra(Intent.EXTRA_TEXT,"USN : " + id +"\nNAME : " + nm + "\nCGPA : " + mark);
+                intentMail.setType("message/rfc822");
 
+                startActivity(Intent.createChooser(intentMail,"Choose Mail App"));
+            }
+        });
+    }
 }

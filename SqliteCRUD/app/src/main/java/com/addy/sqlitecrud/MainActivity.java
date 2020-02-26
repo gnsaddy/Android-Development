@@ -3,6 +3,7 @@ package com.addy.sqlitecrud;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     DatabaseHelperClass databaseHelperClass;
     EditText usn,name,cgpa;
     Button createTbl,addData,updateData,deleteData,viewData;
-    ImageButton emailData;
+    ImageButton emailData,clearField;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         updateData = findViewById(R.id.btnUpdate);
         deleteData = findViewById(R.id.btnDelete);
         emailData = findViewById(R.id.btnMail);
+        clearField = findViewById(R.id.btnClear);
 
 
         AddData();
@@ -40,18 +42,9 @@ public class MainActivity extends AppCompatActivity {
         ViewAll();
         DeleteData();
         SendToMail();
+        ClearData();
 //        createTable();
     }
-
-//    public void createTable(){
-//        createTbl.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                boolean isCreated = databaseHelperClass.onCreate();
-//            }
-//        });
-//    }
-
 
     public void AddData(){
         addData.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 boolean isUpdated = databaseHelperClass.updateDataThroughId(usn.getText().toString(),name.getText().toString(),cgpa.getText().toString());
-
                 if(isUpdated == true){
                     Toast.makeText(MainActivity.this,"Data Updated !!!",Toast.LENGTH_LONG).show();
                 }else {
@@ -108,10 +100,10 @@ public class MainActivity extends AppCompatActivity {
                 }else {
                     StringBuffer stringBuffer = new StringBuffer();
                     while (cursor.moveToNext()){
-                        stringBuffer.append("USN : " + cursor.getString(0)+"\n");
+                        stringBuffer.append("\nUSN : " + cursor.getString(0)+"\n");
                         stringBuffer.append("NAME : " + cursor.getString(1)+"\n");
-                        stringBuffer.append("CGPA : " + cursor.getString(2)+"\n\n");
-//                        stringBuffer.append("---------------------------------------");
+                        stringBuffer.append("CGPA : " + cursor.getString(2)+"\n");
+                        stringBuffer.append("\n---------------------------------------\n");
                     }
                     showMessage("DATA : ",stringBuffer.toString());
                 }
@@ -124,6 +116,12 @@ public class MainActivity extends AppCompatActivity {
         builder.setCancelable(true);
         builder.setTitle(title);
         builder.setMessage(message);
+        builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(getApplicationContext(),"Ok clicked",Toast.LENGTH_LONG).show();
+            }
+        });
         builder.show();
     }
 
@@ -139,8 +137,18 @@ public class MainActivity extends AppCompatActivity {
                 intentMail.putExtra(Intent.EXTRA_SUBJECT, "Testing sending mail");
                 intentMail.putExtra(Intent.EXTRA_TEXT,"USN : " + id +"\nNAME : " + nm + "\nCGPA : " + mark);
                 intentMail.setType("message/rfc822");
-
                 startActivity(Intent.createChooser(intentMail,"Choose Mail App"));
+            }
+        });
+    }
+
+    public void ClearData(){
+        clearField.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                usn.setText("");
+                name.setText("");
+                cgpa.setText("");
             }
         });
     }

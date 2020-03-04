@@ -113,7 +113,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void showMessage(String title, String message){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(true);
+//        builder.setCancelable(true);
+        builder.setIcon(R.drawable.test);
         builder.setTitle(title);
         builder.setMessage(message);
         builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {

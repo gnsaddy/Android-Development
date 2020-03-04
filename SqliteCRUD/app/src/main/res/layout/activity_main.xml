@@ -207,6 +207,5 @@
             android:scaleType="fitCenter"
             android:shadowColor="@color/colorPrimary"
             app:srcCompat="@android:drawable/ic_notification_clear_all" />
-
     </LinearLayout>
 </RelativeLayout>

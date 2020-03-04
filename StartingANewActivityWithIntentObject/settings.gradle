@@ -1,0 +1,2 @@
+rootProject.name='StartingANewActivityWithIntentObject'
+include ':app'

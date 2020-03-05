@@ -7,41 +7,42 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<!--    <fragment-->
-<!--        android:id="@+id/fragementone"-->
-<!--        android:name="com.addy.testfragement.FragementOne"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.266"-->
-<!--        app:layout_constraintLeft_toLeftOf="parent"-->
-<!--        app:layout_constraintRight_toRightOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.022" />-->
 
-<!--    <fragment-->
-<!--        android:id="@+id/fragementtwo"-->
-<!--        android:name="com.addy.testfragement.FragementTwo"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.245"-->
-<!--        app:layout_constraintLeft_toLeftOf="parent"-->
-<!--        app:layout_constraintRight_toRightOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.178" />-->
-
-    <Button
-        android:id="@+id/btnswitch"
+    <fragment
+        android:id="@+id/fragementone"
+        android:name="com.addy.testfragement.FragementOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="switchFragments"
-        android:text="Switcher"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.266"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781" />
+        app:layout_constraintVertical_bias="0.022" />
+
+    <fragment
+        android:id="@+id/fragementtwo"
+        android:name="com.addy.testfragement.FragementTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.245"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.178" />
+
+<!--    <Button-->
+<!--        android:id="@+id/btnswitch"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:onClick="switchFragments"-->
+<!--        android:text="Switcher"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.781" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,6 +30,9 @@ public class ActivitySecond extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent resultReturn = new Intent();
+                resultReturn.putExtra(MainActivity.REQUEST_RESULT,42);
+                setResult(RESULT_OK,resultReturn);
                 finish();
             }
         });

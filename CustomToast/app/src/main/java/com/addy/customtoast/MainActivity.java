@@ -30,15 +30,10 @@ public class MainActivity extends AppCompatActivity {
                 ImageView imageView = layout.findViewById(R.id.custom_toast_image);
                 imageView.setImageResource(R.drawable.test);
                 Toast toast = new Toast(getApplicationContext());
-                toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
                 toast.setDuration(Toast.LENGTH_LONG);
                 toast.setView(layout);
                 toast.show();
             }
         });
-
-
-
-
     }
 }

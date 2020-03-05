@@ -1,5 +1,6 @@
 package com.addy.activityswitcher;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,11 +9,21 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton btn,btnSend;
     EditText et1;
     TextView v;
+    public static final String REQUEST_RESULT = "REQUEST_RESULT";
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK){
+            Toast.makeText(MainActivity.this,Integer.toString(data.getIntExtra(REQUEST_RESULT,0)),Toast.LENGTH_LONG).show();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +41,14 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String text = et1.getText().toString();
                 Intent intent = new Intent(MainActivity.this,ActivitySecond.class);
-                startActivity(intent);
+                intent.putExtra(intent.EXTRA_TEXT,text);
+                startActivityForResult(intent,1);
             }
         });
+
+
 
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override

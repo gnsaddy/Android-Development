@@ -106,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
                         stringBuffer.append("\n---------------------------------------\n");
                     }
                     showMessage("DATA : ",stringBuffer.toString());
+                    Toast.makeText(getApplicationContext(),stringBuffer.toString(),Toast.LENGTH_LONG).show();
+
                 }
             }
         });

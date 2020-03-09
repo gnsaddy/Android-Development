@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/vid"
+        android:layout_width="140dp"
+        android:layout_height="32dp"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="Vehicle Id"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/evid"
+        android:layout_width="217dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_toEndOf="@+id/vid"
+        android:gravity="center"
+        android:hint="Vehicle ID"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/vname"
+        android:layout_width="159dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/vid"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="Vehicle Name"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/evname"
+        android:layout_width="204dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/evid"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toEndOf="@+id/vname"
+        android:gravity="center"
+        android:hint="Vehicle Name"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/vengine"
+        android:layout_width="159dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/vname"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="Vehicle CC"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/evengine"
+        android:layout_width="204dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vname"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toEndOf="@+id/vname"
+        android:gravity="center"
+        android:hint="Vehicle CC"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/loutadd"
+        android:layout_width="175dp"
+        android:layout_height="222dp"
+        android:layout_below="@+id/vengine"
+        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/addbtn"
+            android:layout_width="162dp"
+            android:layout_height="65dp"
+            android:layout_margin="20dp"
+            android:text="ADD"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/updatebtn"
+            android:layout_width="169dp"
+            android:layout_height="64dp"
+            android:layout_margin="20dp"
+            android:text="UPDATE"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/loutdel"
+        android:layout_width="176dp"
+        android:layout_height="224dp"
+        android:layout_below="@id/evengine"
+        android:layout_margin="10dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="30dp"
+        android:layout_toEndOf="@+id/loutadd"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/deleteBtn"
+            android:layout_width="162dp"
+            android:layout_height="65dp"
+            android:layout_margin="20dp"
+            android:text="DELETE"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/viewBtn"
+            android:layout_width="169dp"
+            android:layout_height="64dp"
+            android:layout_margin="20dp"
+            android:text="VIEW"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/mailbtn"
+        android:layout_width="370dp"
+        android:layout_height="69dp"
+        android:layout_below="@id/loutdel"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Send To Mail"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>

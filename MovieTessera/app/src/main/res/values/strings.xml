@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MovieTessera</string>
+    <string name="enter_something">Enter Something...</string>
+    <string name="show_text">Show Text</string>
 </resources>

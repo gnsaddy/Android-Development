@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         delete = findViewById(R.id.deleteBtn);
         view = findViewById(R.id.viewBtn);
         mail = findViewById(R.id.mailbtn);
-
         idText = findViewById(R.id.evid);
         nameText = findViewById(R.id.evname);
         ccText = findViewById(R.id.evengine);

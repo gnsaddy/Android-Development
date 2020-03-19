@@ -105,19 +105,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Cursor cursor = databaseHelperClass.FetchData();
-                if (cursor.getCount() == 0) {
-                    Toast.makeText(getApplicationContext(), "Data Not Available", Toast.LENGTH_LONG).show();
-                } else {
+
                     StringBuffer stringBuffer = new StringBuffer();
                     while (cursor.moveToNext()) {
-                        stringBuffer.append("\nVehicle ID : " + cursor.getString(0) + "\n");
-                        stringBuffer.append("\nVehicle Name : " + cursor.getString(1) + "\n");
-                        stringBuffer.append("\nVehicle CC : " + cursor.getString(2) + "\n\n");
+                        stringBuffer.append(cursor.getString(0) + "\n");
+                        stringBuffer.append( cursor.getString(1) + "\n");
+                        stringBuffer.append(cursor.getString(2) + "\n\n");
                     }
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    builder.setTitle("Data's : ").setMessage(stringBuffer.toString()).show();
+                    builder.setTitle("Data's : ").setMessage(stringBuffer).show();
                 }
-            }
+
         });
     }
 

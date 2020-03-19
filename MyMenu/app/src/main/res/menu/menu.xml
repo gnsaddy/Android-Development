@@ -3,33 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/red"
-        android:title="Red" />
+        android:id="@+id/home"
+        android:title="Home" />
     <item
-        android:id="@+id/green"
-        android:title="Green" />
-    <item
-        android:id="@+id/blue"
-        android:title="Blue" />
+        android:id="@+id/contact"
+        android:title="Contact"/>
+
     <item
         android:id="@+id/submenu"
-        android:title="Sub-Menu">
+        android:title="More">
         <menu>
             <item
-                android:id="@+id/grey"
-                android:title="Grey" />
-            <item
-                android:id="@+id/black"
-                android:title="Black" />
+                android:id="@+id/cam"
+                android:title="Volume setting" />
+
         </menu>
     </item>
     <item
         android:id="@+id/btnmenu"
-        android:title="Button Menu">
+        android:title="New User">
         <menu>
             <item
                 android:id="@+id/btnfonts"
-                android:title="Fonts"/>
+                android:title="Sign up"/>
         </menu>
     </item>
 </menu>

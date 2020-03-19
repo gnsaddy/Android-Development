@@ -2,65 +2,57 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linear"
+    android:id="@+id/conslayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".buttonActivity">
 
-
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="424dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
-
-    <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/mail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:layout_height="102dp"
+        android:gravity="center"
+        android:hint="Enter your email"
+        android:inputType="text"
+        android:textSize="25sp"
+        android:layout_margin="15dp"/>
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/pass"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:layout_height="102dp"
+        android:gravity="center"
+        android:inputType="textPassword"
+        android:hint="Enter your password"
+        android:layout_margin="15dp"
+        android:textSize="25sp"/>
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/conpass"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:layout_height="102dp"
+        android:gravity="center"
+        android:inputType="textPassword"
+        android:hint="Confirm password"
+        android:layout_margin="15dp"
+        android:textSize="25sp"/>
 
-    <EditText
-        android:id="@+id/editText6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+    <ImageButton
+        android:id="@+id/create"
+        android:layout_width="192dp"
+        android:layout_height="81dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:paddingBottom="10dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_send_black_24dp" />
 
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+
+
+
+
 
 </LinearLayout>

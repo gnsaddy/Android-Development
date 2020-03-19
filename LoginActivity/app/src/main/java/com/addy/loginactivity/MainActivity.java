@@ -2,18 +2,22 @@ package com.addy.loginactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText et1, pt1;
     Button btn1;
+    ProgressDialog pd;
     int count = 0;
 
     @Override
@@ -36,16 +40,37 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     count++;
-                    Toast.makeText(getApplicationContext(), "Invalid usename and password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Invalid username and password", Toast.LENGTH_SHORT).show();
                     if (count == 3) {
+                        pd = new ProgressDialog(MainActivity.this);
+                        pd.setMessage("To many attempts wait for 10 seconds!!");
+                        pd.setCancelable(false);
+                        pd.show();
+                        new Handler().postDelayed(new Runnable() {
+                            public void run() {
+                                pd.dismiss();
+                            }
+                        }, 3000);
                         btn1.setEnabled(false);
-                        new CountDownTimer(1000, 100) {
+                        new CountDownTimer(10000, 100) {
                             @Override
                             public void onTick(long millisUntilFinished) {
 
                             }
                             @Override
+
                             public void onFinish() {
+                                pd = new ProgressDialog(MainActivity.this);
+                                pd.setMessage("Try again!!");
+                                pd.setCancelable(false);
+                                pd.show();
+
+                                new Handler().postDelayed(new Runnable() {
+                                    public void run() {
+                                        pd.dismiss();
+                                    }
+                                }, 2000);
+                                count = 0;
                                 btn1.setEnabled(true);
                             }
                         }.start();
